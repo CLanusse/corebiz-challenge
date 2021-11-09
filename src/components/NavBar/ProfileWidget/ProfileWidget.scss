@@ -1,0 +1,21 @@
+.profile-widget {
+    margin: 0 2.4rem;
+    display: flex;
+    align-items: center;
+    font-family: 'Nunito', 'sans-serif';
+    font-size: 1.8rem;
+    color: #7a7a7a;
+    cursor: pointer;
+
+    .profile-icon {
+        font-size: 2.4rem;
+        color: #000;
+        margin-right: 0.7rem;
+    }
+}
+
+.mobile-hidden {
+    @media (max-width: 768px) {
+        display: none;
+    }
+}

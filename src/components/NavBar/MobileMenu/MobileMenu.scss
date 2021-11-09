@@ -1,0 +1,11 @@
+.mobile-btn {
+    border: none;
+    background-color: white;
+    cursor: pointer;
+
+    display: none;
+
+    @media (max-width: 768px) {
+        display: block;
+    }
+}

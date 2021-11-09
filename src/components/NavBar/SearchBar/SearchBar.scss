@@ -1,0 +1,33 @@
+.search-bar {
+    flex: 1;
+    padding: 0 2rem;
+    max-width: 70rem;
+
+    @media (max-width: 768px) {
+        flex: unset;
+        width: 100%;
+        order: 2;
+        margin-top: 2.6rem!important;
+    }
+
+    label, input {
+        font-family: 'Nurito', sans-serif;
+        color: #7A7A7A;
+    }
+    label {
+        font-size: 1.4rem;
+    }
+    input {
+        font-size: 1.6rem;
+        border-bottom-color: #7A7A7A;
+    }
+
+    .search-icon {
+        cursor: pointer;
+    }
+}
+
+// para modificar el borderbottom de MUI
+.css-1480iag-MuiInputBase-root-MuiInput-root:after {
+    border-bottom-color: #000!important
+}
