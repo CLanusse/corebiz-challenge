@@ -45,7 +45,7 @@ export const NewsletterForm = () => {
                     await postSusbscription(values)
                     customSwal.fire({
                         icon: 'success',
-                        title: 'Subscripción realizada!',
+                        title: 'Suscripción realizada!',
                         confirmButtonText: 'Genial!'
                       })
                       

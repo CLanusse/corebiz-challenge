@@ -6,6 +6,7 @@ import { store } from "./store/store";
 import { ProductsContainer } from "./components/ProductsContainer/ProductsContainer";
 import { Banner } from "./components/Banner/Banner";
 import { Newsletter } from "./components/Newsletter/Newsletter";
+import { Footer } from "./components/Footer/Footer";
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
         <Banner/>
         <ProductsContainer/>
         <Newsletter/>
+        <Footer/>
       </>
     </Provider>
   );
