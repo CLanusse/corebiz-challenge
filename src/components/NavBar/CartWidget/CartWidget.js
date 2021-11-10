@@ -1,13 +1,21 @@
 import React from 'react'
 import {BsCart4} from 'react-icons/bs';
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import './CartWidget.scss'
 
 export const CartWidget = () => {
 
+    const {cart} = useSelector(state => state)
+
+    const totalQty = () => {
+        return cart.reduce((acc, prod) => acc + prod.qty, 0)
+    }
+
     return (
-        <div className="cart-widget">
+        <Link to="/cart" className="cart-widget">
             <BsCart4 className="cart-icon"/>
-            <span className="cart-counter">1</span>
-        </div>
+            {cart.length > 0 && <span className="cart-counter">{totalQty()}</span>}
+        </Link>
     )
 }

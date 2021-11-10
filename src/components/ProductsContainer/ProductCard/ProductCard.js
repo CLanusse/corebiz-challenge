@@ -1,9 +1,40 @@
 import React from 'react'
 import {FaRegStar, FaStar} from 'react-icons/fa'
+import { useDispatch, useSelector } from 'react-redux'
+import { addToCart } from '../../../actions/cartActions'
+import { customSwal } from '../../../App'
 import './ProductCard.scss'
+
 
 export const ProductCard = ({productId, productName, stars, imageUrl, price, listPrice, installments}) => {
 
+    const dispatch = useDispatch()
+    const {cart} = useSelector(state => state)
+
+    const handleAdd = () => {
+
+        if (!cart.some(el => el.productId === productId)) {
+            const newItem = {
+                productId,
+                productName,
+                imageUrl,
+                price,
+                qty: 1
+            }
+            dispatch( addToCart(newItem) )
+            customSwal.fire({
+                icon: 'success',
+                title: 'Producto agregado al carrito!',
+                confirmButtonText: 'Genial!'
+              })
+        } else {
+            customSwal.fire({
+                icon: 'warning',
+                title: 'El producto ya se encuentra en el carrito',
+                confirmButtonText: 'Entendido'
+              })
+        }
+    }
 
     // función genera las estrellas a mostrar
     const generateStars = () => {
@@ -28,7 +59,10 @@ export const ProductCard = ({productId, productName, stars, imageUrl, price, lis
             <p className="price">por ${price.toFixed(2)}</p>
             {installments.length > 0 && <p className="cuotas">o en {installments[0].quantity} cuotas de ${installments[0].value}</p>}
 
-            <button className="product-btn">
+            <button 
+                className="product-btn"
+                onClick={handleAdd}
+            >
                 Comprar
             </button>
         </article>

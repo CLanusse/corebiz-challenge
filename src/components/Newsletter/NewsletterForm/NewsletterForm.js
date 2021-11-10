@@ -6,14 +6,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import CircularProgress from '@mui/material/CircularProgress';
 import { postSusbscription } from '../../../services/apiServices'
 import { finishLoadingNewsletter, startLoadingNewsletter } from '../../../actions/ui'
-import Swal from 'sweetalert2'
+import { customSwal } from '../../../App'
 
-const customSwal = Swal.mixin({
-    customClass: {
-        title: 'swal-title',
-        confirmButton: 'swal-button-text'
-    }
-})
 
 export const NewsletterForm = () => {
 

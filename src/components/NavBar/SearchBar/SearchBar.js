@@ -19,7 +19,7 @@ export const SearchBar = () => {
     }
 
     useEffect(()=>{
-        value.length === 0 && dispatch( getAllProducts() )
+        value === '' && dispatch( getAllProducts() )
     }, [value, dispatch])
 
     return (

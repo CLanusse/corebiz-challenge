@@ -1,0 +1,92 @@
+.cart-item {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #C0C0C0;
+    margin-bottom: 2rem;
+    @media (max-width:768px) {
+        padding-bottom: 2rem;
+    }
+
+    .cart-item-img {
+        width: 15rem;
+
+        @media (max-width:768px) {
+            display: none;
+        }
+    }
+
+    .cart-item-info {
+        flex: 1;
+        margin: 0 2rem;
+        h3 {
+            font-family: 'Nunito', sans-serif;
+            font-size: 2rem;
+        }
+
+        p {
+            font-family: 'Nunito', sans-serif;
+            font-weight: 900;
+            font-size: 1.6rem;
+        }
+    
+        .cart-item-qty {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 10rem;
+
+            p {
+                margin: 0 1rem;
+                font-family: 'Nunito', sans-serif;
+                font-weight: 600;
+                font-size: 1.4rem;
+            }
+
+            .btn-qty {
+                border: none;
+                height: 3rem;
+                width: 3rem;
+                font-family: 'Nunito', sans-serif;
+                font-weight: 900;
+                font-size: 2rem;
+
+                
+                &:first-of-type {
+                    color: #fff;
+                    background-color: #F8475F;
+                    &:hover {
+                        background-color: darken($color: #F8475F, $amount: 15%);
+                    }
+                }
+                &:last-of-type {
+                    color: #F8475F;
+                    background-color: #FFF;
+                    border: 1px solid #F8475F;
+                    &:hover {
+                        color: darken($color: #F8475F, $amount: 15%);
+                        border-color: darken($color: #F8475F, $amount: 15%);
+                    }
+                }
+                
+            }
+        }
+    }
+    .btn-remove {
+        height: 3rem;
+        width: 3rem;
+        border: 1px solid #000;
+        background-color: #000;
+        text-transform: uppercase;
+        color: #FFF;
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: #FFF;
+        margin: 0 4rem;
+
+        &:hover {
+            background-color: lighten($color: #000, $amount: 20%);
+        }
+    }
+}

@@ -5,6 +5,7 @@ import { SearchBar } from './SearchBar/SearchBar'
 import { CartWidget } from './CartWidget/CartWidget'
 import { ProfileWidget } from './ProfileWidget/ProfileWidget'
 import { MobileMenu } from './MobileMenu/MobileMenu'
+import { Link } from 'react-router-dom'
 
 export const NavBar = () => {
 
@@ -13,7 +14,9 @@ export const NavBar = () => {
             <div className="contenedor">
                 <div className="navbar-container">
                     <MobileMenu/>
-                    <img src={logo} className="logo" alt="logo"/>
+                    <Link to="/">
+                        <img src={logo} className="logo" alt="logo"/>
+                    </Link>
                     <SearchBar/>
 
                     <nav className="icons">

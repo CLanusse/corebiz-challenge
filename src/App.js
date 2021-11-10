@@ -1,24 +1,22 @@
-import { NavBar } from "./components/NavBar/NavBar";
-import 'bootstrap/dist/css/bootstrap.min.css'; // BS for Swal
-import './App.scss'
 import { Provider } from "react-redux";
 import { store } from "./store/store";
-import { ProductsContainer } from "./components/ProductsContainer/ProductsContainer";
-import { Banner } from "./components/Banner/Banner";
-import { Newsletter } from "./components/Newsletter/Newsletter";
-import { Footer } from "./components/Footer/Footer";
+import { AppRouter } from "./routers/AppRouter";
+import 'bootstrap/dist/css/bootstrap.min.css'; // BS for Swal
+import './App.scss'
+import Swal from "sweetalert2";
+
+export const customSwal = Swal.mixin({ // mixin para Sweet Alert
+  customClass: {
+      title: 'swal-title',
+      confirmButton: 'swal-button-text'
+  }
+})
 
 function App() {
 
   return (
     <Provider store={store}>
-      <>
-        <NavBar/>
-        <Banner/>
-        <ProductsContainer/>
-        <Newsletter/>
-        <Footer/>
-      </>
+      <AppRouter/>
     </Provider>
   );
 }
